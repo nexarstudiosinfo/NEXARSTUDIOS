@@ -18,20 +18,23 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-slate-200/10">
       <div className="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
         
+        {/* LOGO */}
         <button 
           onClick={() => onPageChange('home')}
-          className="cursor-pointer text-xl text-slate-900"
-          style={{ fontFamily: "var(--font-logo)" }}
+          className="cursor-pointer text-xl text-slate-900 tracking-wide"
         >
-          Nexar Studios
+          <span style={{ fontFamily: "var(--font-logo)" }}>
+            Nexar Studios
+          </span>
         </button>
 
+        {/* NAV ITEMS */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => onPageChange(item.id)}
-              className={`font-medium text-sm tracking-tight transition-colors duration-300 cursor-pointer ${
+              className={`text-sm tracking-tight transition-colors duration-300 cursor-pointer ${
                 currentPage === item.id 
                   ? 'text-primary' 
                   : 'text-slate-600 hover:text-blue-600'
@@ -42,6 +45,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           ))}
         </div>
 
+        {/* CTA */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -51,6 +55,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           Get in Touch
         </motion.button>
 
+        {/* MOBILE MENU */}
         <button className="md:hidden text-slate-900">
           <Menu size={24} />
         </button>
