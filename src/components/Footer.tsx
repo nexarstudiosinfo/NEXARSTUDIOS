@@ -28,7 +28,7 @@ export default function Footer({ onPageChange }: FooterProps) {
             className="text-xl tracking-tight"
             style={{ fontFamily: "var(--font-logo)" }}
           >
-            Nexar Studios
+            NEXAR STUDIOS
           </button>
 
           <p 
