@@ -74,12 +74,18 @@ export default function Home({ onPageChange }: { onPageChange: (page: string) =>
           className="relative w-full aspect-square mt-10 lg:mt-0"
         >
 
-          {/* Image */}
-          <div className="absolute inset-0 rounded-2xl overflow-hidden glass-panel shadow-xl">
-            <img 
-              src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1000" 
-              className="w-full h-full object-cover"
-            />
+          {/* 1:1 PLACEHOLDER */}
+          <div className="absolute inset-0 rounded-2xl overflow-hidden glass-panel shadow-xl flex items-center justify-center bg-surface-container">
+
+            <div className="text-center space-y-2">
+              <p className="text-sm md:text-base font-bold tracking-wide text-on-surface">
+                1:1 Render Placeholder
+              </p>
+              <p className="text-xs opacity-70 text-on-surface-variant">
+                Replace with your image / video
+              </p>
+            </div>
+
           </div>
 
           {/* Floating Card */}
