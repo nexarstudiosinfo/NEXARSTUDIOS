@@ -1,102 +1,111 @@
-import { motion } from "motion/react";
+import { useState } from 'react';
+import { motion } from 'motion/react';
+import { Menu, X } from 'lucide-react';
 
-interface FooterProps {
+interface NavbarProps {
+  currentPage: string;
   onPageChange: (page: string) => void;
 }
 
-export default function Footer({ onPageChange }: FooterProps) {
+export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { name: 'Services', id: 'services' },
+    { name: 'Portfolio', id: 'portfolio' },
+    { name: 'About', id: 'about' },
+    { name: 'Contact', id: 'contact' },
+  ];
+
   return (
-    <footer className="bg-slate-950 text-white px-6 md:px-12 py-20 mt-auto">
+    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/10">
 
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="flex justify-between items-center px-6 md:px-12 py-4 max-w-[1440px] mx-auto">
 
-        {/* BRAND */}
-        <div className="space-y-4">
-          <h2 style={{ fontFamily: "var(--font-logo)" }} className="text-xl">
+        {/* LOGO */}
+        <button 
+          onClick={() => onPageChange('home')}
+          className="flex items-center gap-2 cursor-pointer"
+        >
+          <img 
+            src="/logo.png" 
+            alt="Nexar Logo"
+            className="w-8 h-8 object-contain"
+          />
+          <span 
+            style={{ fontFamily: "var(--font-logo)" }}
+            className="text-lg md:text-xl text-slate-900 tracking-wide"
+          >
             Nexar Studios
-          </h2>
-          <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-            Engineering immersive digital experiences.
-          </p>
+          </span>
+        </button>
+
+        {/* DESKTOP NAV */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => onPageChange(item.id)}
+              className={`text-sm font-medium transition-colors ${
+                currentPage === item.id
+                  ? 'text-primary'
+                  : 'text-slate-600 hover:text-slate-900'
+              }`}
+            >
+              {item.name}
+            </button>
+          ))}
         </div>
 
-        {/* SERVICES */}
-        <div className="space-y-4">
-          <h3 className="text-sm uppercase tracking-widest text-slate-500">
-            Services
-          </h3>
-          <div className="flex flex-col gap-2 text-sm text-slate-300">
-            <span>VR Experiences</span>
-            <span>3D Visualization</span>
-            <span>Web Development</span>
-            <span>UI/UX Design</span>
-          </div>
-        </div>
+        {/* CTA BUTTON (DESKTOP) */}
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => onPageChange('contact')}
+          className="hidden md:block bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg hover:opacity-90 transition"
+        >
+          Get in Touch
+        </motion.button>
 
-        {/* QUICK LINKS */}
-        <div className="space-y-4">
-          <h3 className="text-sm uppercase tracking-widest text-slate-500">
-            Quick Links
-          </h3>
-          <div className="flex flex-col gap-2 text-sm text-slate-300">
-            <button onClick={() => onPageChange("home")}>Home</button>
-            <button onClick={() => onPageChange("services")}>Services</button>
-            <button onClick={() => onPageChange("portfolio")}>Portfolio</button>
-            <button onClick={() => onPageChange("about")}>About</button>
-            <button onClick={() => onPageChange("contact")}>Contact</button>
-          </div>
-        </div>
+        {/* MOBILE MENU BUTTON */}
+        <button
+          className="md:hidden text-slate-900"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
-        {/* SOCIAL + CTA */}
-        <div className="space-y-6">
+      </div>
 
-          <div className="space-y-3 text-sm text-slate-300">
+      {/* MOBILE MENU */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-t border-slate-200 px-6 py-6 flex flex-col gap-6">
 
-            <a 
-              href="https://www.instagram.com/nexarstudios.in" 
-              target="_blank"
-              className="block hover:text-white transition-colors"
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                onPageChange(item.id);
+                setIsOpen(false);
+              }}
+              className="text-left text-lg font-semibold text-slate-800"
             >
-              Follow our work
-            </a>
+              {item.name}
+            </button>
+          ))}
 
-            <a 
-              href="https://www.linkedin.com/company/nexarstudios/" 
-              target="_blank"
-              className="block hover:text-white transition-colors"
-            >
-              Connect with us
-            </a>
-
-            <a 
-              href="https://wa.me/916305874503?text=Hi%20Nexar%20Studios%2C%20I%20want%20to%20discuss%20a%20project."
-              target="_blank"
-              className="block hover:text-white transition-colors"
-            >
-              Start a project
-            </a>
-
-          </div>
-
-          {/* CTA BUTTON */}
-          <motion.button
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() => onPageChange("contact")}
-            className="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition cursor-pointer"
+          <button
+            onClick={() => {
+              onPageChange('contact');
+              setIsOpen(false);
+            }}
+            className="mt-4 bg-primary text-white px-6 py-3 rounded-full text-sm font-semibold"
           >
             Get in Touch
-          </motion.button>
+          </button>
 
         </div>
-
-      </div>
-
-      {/* BOTTOM */}
-      <div className="mt-16 pt-6 border-t border-white/10 text-center text-xs text-slate-500">
-        © {new Date().getFullYear()} Nexar Studios. All rights reserved.
-      </div>
-
-    </footer>
+      )}
+    </nav>
   );
 }
