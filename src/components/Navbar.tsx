@@ -17,12 +17,9 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-slate-200/10">
       <div className="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
-        <button 
-          onClick={() => onPageChange('home')}
-          className="text-xl font-bold tracking-tighter text-slate-900 font-headline cursor-pointer"
-        >
-          NEXAR STUDIOS
-        </button>
+        <span style={{ fontFamily: "var(--font-logo)" }}>
+  Nexar Studios
+</span>
         
         <div className="hidden md:flex space-x-8">
           {navItems.map((item) => (
