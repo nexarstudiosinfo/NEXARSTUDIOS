@@ -1,51 +1,38 @@
-<section className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
-  
-  <div className="text-center mb-16 md:mb-24">
-    <h2 className="text-3xl md:text-5xl font-bold text-on-surface mb-4">
-      Leadership
-    </h2>
-    <p className="text-base md:text-xl text-on-surface-variant max-w-2xl mx-auto">
-      The architects behind our methodology.
-    </p>
-  </div>
+import { Rocket, Ruler, CheckCircle2 } from 'lucide-react';
 
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-    
-    {leadership.map((leader) => (
-      
-      <div key={leader.name} className="group cursor-pointer">
+const leadership = [
+  {
+    name: 'Marcus Vance',
+    role: 'CEO & FOUNDER',
+    bio: 'Former lead architect at major tech companies.',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600',
+  },
+  {
+    name: 'Elena Rostova',
+    role: 'CHIEF DESIGN OFFICER',
+    bio: 'Award-winning designer shaping digital experiences.',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600',
+  },
+  {
+    name: 'Julian Thorne',
+    role: 'CTO',
+    bio: 'Expert in scalable systems and performance.',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600',
+  },
+];
 
-        {/* IMAGE */}
-        <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 md:mb-8">
+export default function About() {
+  return (
+    <div className="pt-24 md:pt-32 pb-24 md:pb-32">
+
+      {/* HERO */}
+      <section className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 mb-20 md:mb-40">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
           
-          <img 
-            src={leader.image}
-            alt={leader.name}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
-          />
+          <div className="space-y-6 md:space-y-8">
+            
+            <span className="inline-block px-3 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] md:text-xs font-bold tracking-widest uppercase">
+              About Nexar
+            </span>
 
-          {/* OPTIONAL OVERLAY (premium look) */}
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500" />
-
-        </div>
-
-        {/* TEXT */}
-        <h3 className="text-xl md:text-2xl font-bold text-on-surface mb-1">
-          {leader.name}
-        </h3>
-
-        <p className="text-xs font-bold text-primary tracking-widest uppercase mb-3 md:mb-4">
-          {leader.role}
-        </p>
-
-        <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">
-          {leader.bio}
-        </p>
-
-      </div>
-
-    ))}
-
-  </div>
-
-</section>
+            <h1 className="text-4xl md:text-6xl lg:text-[72
