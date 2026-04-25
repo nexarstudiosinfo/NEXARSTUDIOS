@@ -3,7 +3,7 @@
 
 @theme {
   --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-headline: "Anton", sans-serif;
+  --font-heading: "Poppins", sans-serif;
   --font-logo: "Orbitron", sans-serif;
 
   /* Theme Colors */
