@@ -23,19 +23,13 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   onClick={() => onPageChange('home')}
   className="flex items-center gap-3 cursor-pointer"
 >
-  {/* LOGO IMAGE PLACEHOLDER */}
-  <img 
-    src="/logo.png" 
-    alt="Nexar Logo"
-    className="w-16 h-16 object-contain"
-  />
 
   {/* LOGO TEXT */}
   <span 
     style={{ fontFamily: "var(--font-logo)" }}
     className="text-lg md:text-xl text-slate-900 tracking-wide"
   >
-    Nexar Studios
+    NEXAR STUDIOS
   </span>
 </button>
 
