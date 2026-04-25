@@ -13,7 +13,7 @@
     
     {leadership.map((leader) => (
       
-      <div key={leader.name} className="group">
+      <div key={leader.name} className="group cursor-pointer">
 
         {/* IMAGE */}
         <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 md:mb-8">
@@ -21,8 +21,11 @@
           <img 
             src={leader.image}
             alt={leader.name}
-            className="w-full h-full object-cover grayscale md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
           />
+
+          {/* OPTIONAL OVERLAY (premium look) */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500" />
 
         </div>
 
