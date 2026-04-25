@@ -64,7 +64,7 @@ export default function Contact() {
               <input
                 name="name"
                 required
-                placeholder="John Doe"
+                placeholder="Riva"
                 className="border-b border-outline-variant bg-transparent px-1 py-3 text-on-surface outline-none focus:border-primary"
               />
             </div>
@@ -78,7 +78,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 required
-                placeholder="john@company.com"
+                placeholder="riva@company.com"
                 className="border-b border-outline-variant bg-transparent px-1 py-3 text-on-surface outline-none focus:border-primary"
               />
             </div>
