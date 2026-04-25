@@ -30,7 +30,8 @@ export default function Home({ onPageChange }: { onPageChange: (page: string) =>
           </div>
 
           <h1 className="text-[72px] leading-[1.1] font-bold text-on-surface tracking-tighter">
-            Building the /nFuture with <br />
+            Building the <br />
+Future with <br />
             <span className="text-gradient">Immersive Technology</span>
           </h1>
 
