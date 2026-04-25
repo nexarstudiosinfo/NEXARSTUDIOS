@@ -24,7 +24,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           className="cursor-pointer text-xl text-slate-900 tracking-wide"
         >
           <span style={{ fontFamily: "var(--font-logo)" }}>
-            Nexar Studios
+            NEXAR STUDIOS
           </span>
         </button>
 
