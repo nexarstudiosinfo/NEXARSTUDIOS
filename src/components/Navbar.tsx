@@ -27,7 +27,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   <img 
     src="/logo.png" 
     alt="Nexar Logo"
-    className="w-8 h-8 object-contain"
+    className="w-16 h-16 object-contain"
   />
 
   {/* LOGO TEXT */}
