@@ -1,30 +1,48 @@
-<section className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 mb-20 md:mb-40">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
+<section className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+  
+  <div className="text-center mb-16 md:mb-24">
+    <h2 className="text-3xl md:text-5xl font-bold text-on-surface mb-4">
+      Leadership
+    </h2>
+    <p className="text-base md:text-xl text-on-surface-variant max-w-2xl mx-auto">
+      The architects behind our methodology.
+    </p>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
     
-    <div className="space-y-6 md:space-y-8">
+    {leadership.map((leader) => (
       
-      <span className="inline-block px-3 py-1.5 rounded-full bg-primary/10 text-primary text-[10px] md:text-xs font-bold tracking-widest uppercase">
-        About Nexar
-      </span>
+      <div key={leader.name} className="group">
 
-      <h1 className="text-4xl md:text-6xl lg:text-[72px] leading-tight font-bold text-on-surface">
-        Visionaries at the <br />
-        <span className="text-gradient">Intersection</span> of <br />
-        Tech & Design
-      </h1>
+        {/* IMAGE */}
+        <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 md:mb-8">
+          
+          <img 
+            src={leader.image}
+            alt={leader.name}
+            className="w-full h-full object-cover grayscale md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+          />
 
-      <p className="text-base md:text-xl text-on-surface-variant max-w-lg">
-        We engineer digital experiences that redefine industry standards.
-      </p>
+        </div>
 
-    </div>
+        {/* TEXT */}
+        <h3 className="text-xl md:text-2xl font-bold text-on-surface mb-1">
+          {leader.name}
+        </h3>
 
-    <div className="relative h-[300px] md:h-[500px] lg:h-[600px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
-      <img 
-        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000" 
-        className="w-full h-full object-cover"
-      />
-    </div>
+        <p className="text-xs font-bold text-primary tracking-widest uppercase mb-3 md:mb-4">
+          {leader.role}
+        </p>
+
+        <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">
+          {leader.bio}
+        </p>
+
+      </div>
+
+    ))}
 
   </div>
+
 </section>
