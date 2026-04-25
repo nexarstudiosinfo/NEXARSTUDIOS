@@ -1,7 +1,28 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    await fetch("https://formsubmit.co/ajax/nexarstudios.info@gmail.com", {
+      method: "POST",
+      body: data,
+    });
+
+    setLoading(false);
+    setSuccess(true);
+    form.reset();
+  };
+
   return (
     <div className="pt-24 md:pt-32 pb-24 md:pb-32 px-6 md:px-12 lg:px-16 max-w-[1440px] mx-auto">
 
@@ -13,20 +34,22 @@ export default function Contact() {
         </h1>
 
         <p className="text-base md:text-xl text-on-surface-variant">
-          Tell us about your project. We usually reply within 24 hours.
+          Tell us about your project. We reply within 24 hours.
         </p>
       </div>
 
       {/* FORM */}
       <div className="glass-panel rounded-[2rem] p-6 md:p-12 shadow-2xl">
 
-        <form
-          action="https://formsubmit.co/nexarstudios.info@gmail.com"
-          method="POST"
-          className="space-y-8 md:space-y-10"
-        >
+        {/* ✅ SUCCESS MESSAGE */}
+        {success && (
+          <div className="mb-8 p-4 rounded-xl bg-green-500/10 text-green-600 font-semibold text-center">
+            🚀 Message sent successfully! We’ll contact you soon.
+          </div>
+        )}
 
-          {/* REQUIRED HIDDEN */}
+        <form onSubmit={handleSubmit} className="space-y-8 md:space-y-10">
+
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_subject" value="New Nexar Inquiry 🚀" />
 
@@ -40,9 +63,8 @@ export default function Contact() {
 
               <input
                 name="name"
-                type="text"
                 required
-                placeholder="riva"
+                placeholder="John Doe"
                 className="border-b border-outline-variant bg-transparent px-1 py-3 text-on-surface outline-none focus:border-primary"
               />
             </div>
@@ -56,7 +78,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 required
-                placeholder="riva@company.com"
+                placeholder="john@company.com"
                 className="border-b border-outline-variant bg-transparent px-1 py-3 text-on-surface outline-none focus:border-primary"
               />
             </div>
@@ -99,16 +121,16 @@ export default function Contact() {
           {/* BUTTON */}
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="bg-on-surface text-surface px-8 md:px-12 py-4 md:py-5 rounded-full text-sm font-bold flex items-center justify-center gap-2 hover:bg-slate-800 transition w-full sm:w-auto"
+            disabled={loading}
+            whileHover={{ scale: loading ? 1 : 1.02 }}
+            whileTap={{ scale: loading ? 1 : 0.98 }}
+            className="bg-on-surface text-surface px-8 md:px-12 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 w-full sm:w-auto transition"
           >
-            Send Message
-            <ArrowRight size={18} />
+            {loading ? "Sending..." : "Send Message"}
+            {!loading && <ArrowRight size={18} />}
           </motion.button>
 
         </form>
-
       </div>
 
     </div>
