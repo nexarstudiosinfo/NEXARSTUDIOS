@@ -17,16 +17,31 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-slate-200/10">
       
-      <div className="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+      <div className="flex justify-between items-center px-6 md:px-12 py-3 md:py-4 max-w-[1440px] mx-auto">
 
-        {/* LOGO */}
+        {/* LOGO + TAGLINE */}
         <button 
           onClick={() => onPageChange('home')}
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex flex-col items-start cursor-pointer leading-tight"
         >
-          <img src="/logo.png" className="w-8 h-8 object-contain" />
-          <span style={{ fontFamily: "var(--font-logo)" }} className="text-xl text-slate-900">
-            Nexar Studios
+          <div className="flex items-center gap-2">
+            <img 
+              src="/logo.png" 
+              alt="Nexar Logo"
+              className="w-8 h-8 object-contain"
+            />
+            
+            <span 
+              style={{ fontFamily: "var(--font-logo)" }} 
+              className="text-lg md:text-xl text-slate-900"
+            >
+              Nexar Studios
+            </span>
+          </div>
+
+          {/* TAGLINE */}
+          <span className="text-[10px] md:text-xs text-slate-500 font-medium hidden md:block">
+            Engineering immersive digital experiences
           </span>
         </button>
 
