@@ -35,4 +35,8 @@ export default function About() {
               About Nexar
             </span>
 
-            <h1 className="text-4xl md:text-6xl lg:text-[72
+            <h1 className="text-4xl md:text-6xl lg:text-[72px] leading-tight font-bold text-on-surface">
+  Visionaries at the <br />
+  <span className="text-gradient">Intersection</span> of <br />
+  Tech & Design
+</h1>
