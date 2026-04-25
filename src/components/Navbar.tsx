@@ -16,27 +16,24 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-slate-200/10">
-      
       <div className="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
 
-        {/* LOGO */}
+        {/* ORIGINAL TEXT LOGO (NO IMAGE) */}
         <button 
           onClick={() => onPageChange('home')}
-          className="flex items-center gap-2 cursor-pointer"
+          className="text-xl text-slate-900 cursor-pointer"
+          style={{ fontFamily: "var(--font-logo)" }}
         >
-          <img src="/logo.png" className="w-8 h-8 object-contain" />
-          <span style={{ fontFamily: "var(--font-logo)" }} className="text-xl text-slate-900">
-            Nexar Studios
-          </span>
+          Nexar Studios
         </button>
 
-        {/* NAV ITEMS */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* ORIGINAL NAV ITEMS */}
+        <div className="hidden md:flex space-x-8">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => onPageChange(item.id)}
-              className={`text-sm font-medium transition-colors ${
+              className={`font-medium text-sm tracking-tight transition-colors duration-300 cursor-pointer ${
                 currentPage === item.id 
                   ? 'text-primary' 
                   : 'text-slate-600 hover:text-blue-600'
@@ -47,21 +44,17 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           ))}
         </div>
 
-        {/* CTA ACTIONS */}
+        {/* CTA ACTIONS (ONLY ADDITION) */}
         <div className="hidden md:flex items-center gap-4">
 
-          {/* WhatsApp */}
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <a
             href="https://wa.me/916305874503?text=Hi%20Nexar%20Studios%2C%20I%20want%20to%20discuss%20a%20project."
             target="_blank"
             className="text-sm font-semibold text-green-600 hover:text-green-700"
           >
             WhatsApp
-          </motion.a>
+          </a>
 
-          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/company/nexarstudios/"
             target="_blank"
@@ -70,7 +63,6 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
             LinkedIn
           </a>
 
-          {/* Instagram */}
           <a
             href="https://www.instagram.com/nexarstudios.in"
             target="_blank"
@@ -79,19 +71,19 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
             Instagram
           </a>
 
-          {/* MAIN CTA */}
+          {/* ORIGINAL CTA BUTTON */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => onPageChange('contact')}
-            className="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md hover:opacity-90 transition"
+            className="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition cursor-pointer shadow-lg shadow-primary/20"
           >
             Get in Touch
           </motion.button>
 
         </div>
 
-        {/* MOBILE MENU ICON */}
+        {/* MOBILE ICON (UNCHANGED) */}
         <button className="md:hidden text-slate-900">
           <Menu size={24} />
         </button>
