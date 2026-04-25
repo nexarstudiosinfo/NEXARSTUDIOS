@@ -17,16 +17,23 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-slate-200/10">
       <div className="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
-        <span style={{ fontFamily: "var(--font-logo)" }}>
-  Nexar Studios
-</span>
         
+        {/* LOGO */}
+        <button 
+          onClick={() => onPageChange('home')}
+          className="cursor-pointer text-xl text-slate-900"
+          style={{ fontFamily: "var(--font-logo)" }}
+        >
+          Nexar Studios
+        </button>
+
+        {/* NAV ITEMS */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => onPageChange(item.id)}
-              className={`font-headline font-medium text-sm tracking-tight transition-colors duration-300 cursor-pointer ${
+              className={`font-medium text-sm tracking-tight transition-colors duration-300 cursor-pointer ${
                 currentPage === item.id 
                   ? 'text-primary' 
                   : 'text-slate-600 hover:text-blue-600'
@@ -37,18 +44,21 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           ))}
         </div>
 
+        {/* CTA */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => onPageChange('contact')}
-          className="hidden md:block bg-primary text-on-primary px-6 py-2 rounded-full font-sans text-sm font-semibold hover:opacity-90 transition-opacity cursor-pointer shadow-lg shadow-primary/20"
+          className="hidden md:block bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity cursor-pointer shadow-lg shadow-primary/20"
         >
           Get in Touch
         </motion.button>
 
+        {/* MOBILE MENU */}
         <button className="md:hidden text-slate-900">
           <Menu size={24} />
         </button>
+
       </div>
     </nav>
   );
