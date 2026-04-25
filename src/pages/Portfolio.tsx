@@ -50,26 +50,26 @@ export default function Portfolio() {
   );
 
   return (
-    <div className="pt-32 pb-32 px-16 max-w-[1440px] mx-auto min-h-screen">
+    <div className="pt-24 md:pt-32 pb-24 md:pb-32 px-6 md:px-12 lg:px-16 max-w-[1440px] mx-auto min-h-screen">
       
       {/* HEADER */}
-      <div className="text-center max-w-3xl mx-auto mb-20">
-        <h1 className="text-[72px] font-bold text-on-surface mb-6">
+      <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
+        <h1 className="text-4xl md:text-6xl lg:text-[72px] font-bold text-on-surface mb-4 md:mb-6">
           Our Innovations
         </h1>
 
-        <p className="text-xl text-on-surface-variant leading-relaxed">
+        <p className="text-base md:text-xl text-on-surface-variant leading-relaxed">
           Exploring the boundaries of creative technology.
         </p>
       </div>
 
       {/* FILTER */}
-      <div className="flex justify-center gap-4 mb-16 overflow-x-auto pb-4">
+      <div className="flex justify-center gap-3 md:gap-4 mb-10 md:mb-16 overflow-x-auto pb-2">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`px-6 py-2.5 rounded-full text-sm font-semibold border transition-all cursor-pointer whitespace-nowrap ${
+            className={`px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-semibold border transition-all cursor-pointer whitespace-nowrap ${
               filter === cat
                 ? 'bg-primary-container text-on-primary-container border-transparent'
                 : 'bg-white text-on-surface-variant border-outline-variant hover:border-primary'
@@ -83,17 +83,17 @@ export default function Portfolio() {
       {/* GRID */}
       <motion.div
         layout
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
       >
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
             <motion.div
               key={project.title}
               layout
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              className={`${project.span} relative group h-[400px] rounded-3xl overflow-hidden glass-panel`}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className={`${project.span} relative group aspect-[4/5] md:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden glass-panel`}
             >
               <img
                 src={project.image}
@@ -101,17 +101,17 @@ export default function Portfolio() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex flex-col justify-end">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 p-5 md:p-8 flex flex-col justify-end">
                 
-                <span className="inline-block px-3 py-1 bg-primary/20 text-white border border-primary/30 rounded-full text-[10px] font-bold tracking-widest uppercase mb-3">
+                <span className="inline-block px-2.5 py-1 bg-primary/20 text-white border border-primary/30 rounded-full text-[9px] md:text-[10px] font-bold tracking-widest uppercase mb-2 md:mb-3">
                   {project.category}
                 </span>
 
-                <h3 className="text-3xl font-bold text-white mb-2">
+                <h3 className="text-xl md:text-3xl font-bold text-white mb-1 md:mb-2">
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-slate-300 max-w-sm line-clamp-2">
+                <p className="text-xs md:text-sm text-slate-300 max-w-sm line-clamp-2">
                   {project.description}
                 </p>
 
@@ -122,8 +122,8 @@ export default function Portfolio() {
       </motion.div>
 
       {/* LOAD MORE */}
-      <div className="mt-24 flex justify-center">
-        <button className="bg-white border border-outline text-on-surface text-sm font-bold px-8 py-4 rounded-full hover:bg-slate-50 flex items-center gap-2 cursor-pointer">
+      <div className="mt-16 md:mt-24 flex justify-center">
+        <button className="bg-white border border-outline text-on-surface text-sm font-bold px-6 md:px-8 py-3 md:py-4 rounded-full hover:bg-slate-50 flex items-center gap-2 cursor-pointer w-full sm:w-auto justify-center">
           Load More Projects
           <ChevronDown size={20} />
         </button>
