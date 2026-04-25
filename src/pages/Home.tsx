@@ -22,27 +22,22 @@ export default function Home({ onPageChange }: { onPageChange: (page: string) =>
           className="flex flex-col gap-6 md:gap-8"
         >
 
-          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-surface-container-high border border-outline-variant/30 text-[10px] md:text-xs font-bold tracking-widest uppercase text-on-surface-variant">
             <span className="w-2 h-2 bg-primary rounded-full" />
             Next-Gen Digital Solutions
           </div>
 
-          {/* Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-[72px] leading-tight font-bold text-on-surface">
             Building the <br />
             Future with <br />
             <span className="text-gradient">Immersive Technology</span>
           </h1>
 
-          {/* Paragraph */}
           <p className="text-base md:text-lg text-on-surface-variant max-w-xl leading-relaxed">
             We engineer cutting-edge digital environments, blending corporate precision with visionary VR/3D technology.
           </p>
 
-          {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full">
-
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
@@ -61,7 +56,6 @@ export default function Home({ onPageChange }: { onPageChange: (page: string) =>
             >
               Get in Touch
             </motion.button>
-
           </div>
 
         </motion.div>
@@ -75,14 +69,12 @@ export default function Home({ onPageChange }: { onPageChange: (page: string) =>
         >
 
           {/* HERO IMAGE */}
-<div className="absolute inset-0 rounded-2xl overflow-hidden glass-panel shadow-xl">
-  <img 
-    src="/hero-render.png"
-    alt="Nexar Render"
-    className="w-full h-full object-cover"
-  />
-</div>
-
+          <div className="absolute inset-0 rounded-2xl overflow-hidden glass-panel shadow-xl">
+            <img 
+              src="/hero-render.png"
+              alt="Nexar Render"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* Floating Card */}
