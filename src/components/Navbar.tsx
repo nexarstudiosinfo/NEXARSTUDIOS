@@ -27,9 +27,9 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           onClick={() => onPageChange('home')}
           className="flex items-center gap-2"
         >
-          <img src="/logo.png" className="w-8 h-8" />
+
           <span style={{ fontFamily: "var(--font-logo)" }} className="text-lg">
-            Nexar Studios
+            NEXAR STUDIOS
           </span>
         </button>
 
