@@ -18,7 +18,6 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-slate-200/10">
       <div className="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
         
-        {/* LOGO */}
         <button 
           onClick={() => onPageChange('home')}
           className="cursor-pointer text-xl text-slate-900"
@@ -27,7 +26,6 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           Nexar Studios
         </button>
 
-        {/* NAV ITEMS */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item) => (
             <button
@@ -44,7 +42,6 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           ))}
         </div>
 
-        {/* CTA */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -54,7 +51,6 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           Get in Touch
         </motion.button>
 
-        {/* MOBILE MENU */}
         <button className="md:hidden text-slate-900">
           <Menu size={24} />
         </button>
