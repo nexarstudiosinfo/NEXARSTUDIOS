@@ -21,7 +21,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
           onClick={() => onPageChange('home')}
           className="text-xl font-bold tracking-tighter text-slate-900 font-headline cursor-pointer"
         >
-          Nexar Studios
+          NEXAR STUDIOS
         </button>
         
         <div className="hidden md:flex space-x-8">
