@@ -74,17 +74,14 @@ export default function Home({ onPageChange }: { onPageChange: (page: string) =>
           className="relative w-full aspect-square mt-10 lg:mt-0"
         >
 
-          {/* 1:1 PLACEHOLDER */}
-          <div className="absolute inset-0 rounded-2xl overflow-hidden glass-panel shadow-xl flex items-center justify-center bg-surface-container">
-
-            <div className="text-center space-y-2">
-              <p className="text-sm md:text-base font-bold tracking-wide text-on-surface">
-                1:1 Render Placeholder
-              </p>
-              <p className="text-xs opacity-70 text-on-surface-variant">
-                Replace with your image / video
-              </p>
-            </div>
+          {/* HERO IMAGE */}
+<div className="absolute inset-0 rounded-2xl overflow-hidden glass-panel shadow-xl">
+  <img 
+    src="/hero-render.png"
+    alt="Nexar Render"
+    className="w-full h-full object-cover"
+  />
+</div>
 
           </div>
 
