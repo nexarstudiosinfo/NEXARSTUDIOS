@@ -109,14 +109,20 @@ export default function About() {
           </p>
 
           <div className="pt-6">
-            <p className="text-lg font-semibold text-primary">
-              Join the Movement
-            </p>
-            <p>
-              Let’s move beyond textbooks and into true understanding.  
-              Experience Nexar in your school.
-            </p>
-          </div>
+  <p className="text-lg font-semibold text-primary">
+    <a 
+      href="/contact" 
+      className="hover:underline underline-offset-4 transition-all"
+    >
+      Join the Movement
+    </a>
+  </p>
+
+  <p className="text-on-surface-variant mt-2">
+    Let’s move beyond textbooks and into true understanding.  
+    Experience Nexar in your school.
+  </p>
+</div>
 
         </div>
 
