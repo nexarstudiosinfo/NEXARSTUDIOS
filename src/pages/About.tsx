@@ -2,20 +2,20 @@ import { Rocket, Ruler, CheckCircle2 } from 'lucide-react';
 
 const leadership = [
   {
-    name: 'Ajay Konkati',
+    name: 'Marcus Vance',
     role: 'CEO & FOUNDER',
     bio: 'Former lead architect at major tech companies.',
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600',
   },
   {
-    name: 'Jaya Chandra',
-    role: 'CO FOUNDER',
+    name: 'Elena Rostova',
+    role: 'CHIEF DESIGN OFFICER',
     bio: 'Award-winning designer shaping digital experiences.',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600',
   },
   {
-    name: 'Rama Krishna',
-    role: 'CMO',
+    name: 'Julian Thorne',
+    role: 'CTO',
     bio: 'Expert in scalable systems and performance.',
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600',
   },
@@ -58,17 +58,17 @@ export default function About() {
         </div>
       </section>
 
-      {/* ✨ NEW STORY SECTION (YOUR CONTENT) */}
-      <section className="max-w-[900px] mx-auto px-6 md:px-12 mb-20 md:mb-32 text-center">
+      {/* STORY SECTION */}
+      <section className="max-w-[900px] mx-auto px-6 md:px-12 mb-20 md:mb-32 text-left">
         
         <h2 className="text-2xl md:text-4xl font-bold mb-8 text-on-surface">
-          The NEXAR Story
+          Where Learning Becomes Experience
         </h2>
 
         <div className="space-y-6 text-on-surface-variant text-base md:text-lg leading-relaxed">
           
           <p>
-            India has always valued knowledge — <strong>Vidya Dhanam</strong>.
+            India has always valued knowledge — <strong>Vidya Dhanam</strong>. 
             But over time, learning became confined to textbooks, memorization, and exam pressure — losing its sense of discovery.
           </p>
 
@@ -93,7 +93,7 @@ export default function About() {
             Through AR and 360° VR experiences, we transform lessons into moments students never forget:
           </p>
 
-          <ul className="text-left max-w-xl mx-auto space-y-2">
+          <ul className="space-y-2 pl-4">
             <li>• Explore the solar system, not just read about it</li>
             <li>• Experience history, not just memorize it</li>
             <li>• Understand biology, not just imagine it</li>
@@ -109,20 +109,20 @@ export default function About() {
           </p>
 
           <div className="pt-6">
-  <p className="text-lg font-semibold text-primary">
-    <a 
-      href="/contact" 
-      className="hover:underline underline-offset-4 transition-all"
-    >
-      Join the Movement
-    </a>
-  </p>
+            <p className="text-lg font-semibold text-primary">
+              <a 
+                href="/contact" 
+                className="hover:underline underline-offset-4 transition-all"
+              >
+                Join the Movement →
+              </a>
+            </p>
 
-  <p className="text-on-surface-variant mt-2">
-    Let’s move beyond textbooks and into true understanding.  
-    Experience Nexar in your school.
-  </p>
-</div>
+            <p className="text-on-surface-variant mt-2">
+              Let’s move beyond textbooks and into true understanding.  
+              Experience Nexar in your school.
+            </p>
+          </div>
 
         </div>
 
@@ -135,7 +135,7 @@ export default function About() {
           The Narrative
         </h2>
 
-        {/* existing code continues... */}
+        {/* existing content continues... */}
       </section>
 
     </div>
