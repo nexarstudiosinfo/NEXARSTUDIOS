@@ -2,20 +2,20 @@ import { Rocket, Ruler, CheckCircle2 } from 'lucide-react';
 
 const leadership = [
   {
-    name: 'Marcus Vance',
+    name: 'Ajay Konkati',
     role: 'CEO & FOUNDER',
     bio: 'Former lead architect at major tech companies.',
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600',
   },
   {
-    name: 'Elena Rostova',
-    role: 'CHIEF DESIGN OFFICER',
+    name: 'Jaya Chandra',
+    role: 'CO FOUNDER',
     bio: 'Award-winning designer shaping digital experiences.',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600',
   },
   {
-    name: 'Julian Thorne',
-    role: 'CTO',
+    name: 'Rama Krishna',
+    role: 'CMO',
     bio: 'Expert in scalable systems and performance.',
     image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600',
   },
@@ -62,7 +62,7 @@ export default function About() {
       <section className="max-w-[900px] mx-auto px-6 md:px-12 mb-20 md:mb-32 text-center">
         
         <h2 className="text-2xl md:text-4xl font-bold mb-8 text-on-surface">
-          Where Learning Becomes Experience
+          The NEXAR Story
         </h2>
 
         <div className="space-y-6 text-on-surface-variant text-base md:text-lg leading-relaxed">
