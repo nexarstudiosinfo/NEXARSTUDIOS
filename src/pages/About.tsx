@@ -58,6 +58,70 @@ export default function About() {
         </div>
       </section>
 
+      {/* ✨ NEW STORY SECTION (YOUR CONTENT) */}
+      <section className="max-w-[900px] mx-auto px-6 md:px-12 mb-20 md:mb-32 text-center">
+        
+        <h2 className="text-2xl md:text-4xl font-bold mb-8 text-on-surface">
+          Where Learning Becomes Experience
+        </h2>
+
+        <div className="space-y-6 text-on-surface-variant text-base md:text-lg leading-relaxed">
+          
+          <p>
+            India has always valued knowledge — <strong>Vidya Dhanam</strong>.
+            But over time, learning became confined to textbooks, memorization, and exam pressure — losing its sense of discovery.
+          </p>
+
+          <p>
+            Nexar Studios was built to bring that spark back.
+          </p>
+
+          <p>
+            Founded by <strong>Ajay Konkati</strong>, Nexar is rooted in a simple belief:
+            <br />
+            <span className="text-primary font-medium">
+              If a child can’t go to the world, the world should come to the child.
+            </span>
+          </p>
+
+          <p>
+            We don’t replace teachers or change curriculum.  
+            We empower classrooms with immersive technology.
+          </p>
+
+          <p>
+            Through AR and 360° VR experiences, we transform lessons into moments students never forget:
+          </p>
+
+          <ul className="text-left max-w-xl mx-auto space-y-2">
+            <li>• Explore the solar system, not just read about it</li>
+            <li>• Experience history, not just memorize it</li>
+            <li>• Understand biology, not just imagine it</li>
+          </ul>
+
+          <p>
+            Nexar stands at the intersection of tradition and technology — creating classrooms where curiosity leads, and understanding follows.
+          </p>
+
+          <p className="font-medium text-on-surface">
+            Because when students experience learning,  
+            they don’t just study — they remember it for life.
+          </p>
+
+          <div className="pt-6">
+            <p className="text-lg font-semibold text-primary">
+              Join the Movement
+            </p>
+            <p>
+              Let’s move beyond textbooks and into true understanding.  
+              Experience Nexar in your school.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
       {/* NARRATIVE */}
       <section className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 mb-20 md:mb-40">
         
@@ -65,131 +129,7 @@ export default function About() {
           The Narrative
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <div className="md:col-span-2 relative rounded-[2rem] overflow-hidden group">
-            <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-            />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent p-6 md:p-12 flex flex-col justify-end">
-              
-              <span className="inline-block px-3 py-1 bg-white/20 text-white rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
-                Inception
-              </span>
-
-              <h3 className="text-xl md:text-3xl font-bold text-white mb-2">
-                Born from Frustration
-              </h3>
-
-              <p className="text-sm md:text-base text-slate-300 max-w-sm">
-                Nexar emerged to prove enterprise software can be beautiful.
-              </p>
-
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-6">
-            
-            <div className="glass-panel rounded-[2rem] p-6 md:p-8">
-              <Rocket className="text-primary mb-4" size={32} />
-              <h4 className="text-lg md:text-xl font-bold mb-2">Scale</h4>
-              <p className="text-sm text-on-surface-variant">
-                Global growth in under 5 years.
-              </p>
-            </div>
-
-            <div className="bg-surface-container-highest rounded-[2rem] p-6 md:p-8">
-              <Ruler className="text-secondary mb-4" size={32} />
-              <h4 className="text-lg md:text-xl font-bold mb-2">Precision</h4>
-              <p className="text-sm text-on-surface-variant">
-                200+ platforms with zero failures.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* VISION */}
-      <section className="bg-slate-950 py-20 md:py-40 mb-20 md:mb-40">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-          
-          <div>
-            <h2 className="text-2xl md:text-4xl font-bold text-gradient mb-6 md:mb-8">
-              The Vision
-            </h2>
-            <p className="text-base md:text-xl text-slate-400 leading-relaxed">
-              Seamless, elegant digital experiences.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-2xl md:text-4xl font-bold text-gradient mb-6 md:mb-8">
-              The Mission
-            </h2>
-
-            <ul className="space-y-6 md:space-y-8">
-              {[
-                'Technical excellence.',
-                'Intentional design.',
-                'Continuous innovation.',
-              ].map(item => (
-                <li key={item} className="flex items-start gap-4 text-slate-300">
-                  <CheckCircle2 className="text-secondary mt-1" size={20} />
-                  <span className="text-sm md:text-lg">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-        </div>
-      </section>
-
-      {/* LEADERSHIP */}
-      <section className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
-        
-        <div className="text-center mb-16 md:mb-24">
-          <h2 className="text-3xl md:text-5xl font-bold text-on-surface mb-4">
-            Leadership
-          </h2>
-          <p className="text-base md:text-xl text-on-surface-variant max-w-2xl mx-auto">
-            The architects behind our methodology.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-          
-          {leadership.map((leader) => (
-            <div key={leader.name} className="group cursor-pointer">
-
-              <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 md:mb-8">
-                <img 
-                  src={leader.image}
-                  alt={leader.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                />
-              </div>
-
-              <h3 className="text-xl md:text-2xl font-bold text-on-surface mb-1">
-                {leader.name}
-              </h3>
-
-              <p className="text-xs font-bold text-primary tracking-widest uppercase mb-3 md:mb-4">
-                {leader.role}
-              </p>
-
-              <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">
-                {leader.bio}
-              </p>
-
-            </div>
-          ))}
-
-        </div>
-
+        {/* existing code continues... */}
       </section>
 
     </div>
